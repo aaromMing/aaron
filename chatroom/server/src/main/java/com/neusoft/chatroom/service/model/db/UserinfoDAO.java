@@ -46,7 +46,7 @@ public class UserinfoDAO {
 		}
 	}
 	public boolean update(Userinfo u){//根据id修改某一个人的信息
-		String sql ="update userinfo set name = ?,pass =?,petname =?,mail =?,sex =?,power = ? where id = ?";
+		String sql ="update userinfo set name = ?,pass =?,petname =?,mail =?,sex =?,power = ? where user_id = ?";
 		int i = -1;
 		//插入数据
 		try {

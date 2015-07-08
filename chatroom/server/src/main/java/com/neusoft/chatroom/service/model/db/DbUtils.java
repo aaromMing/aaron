@@ -12,6 +12,9 @@ import java.util.Properties;
 
 public class DbUtils {
 	private static DbUtils d = new DbUtils();
+	
+	private static Connection conn = null;
+	
 	private DbUtils(){//不允许在类的外边创建对象
 		
 	}
@@ -25,12 +28,8 @@ public class DbUtils {
 		// 要求配置文件与dbutils必须在同一目录中
 		return p;
 	}
-	/**
-	 * 该方法的作用 获取与数据库的链接
-	 *  //TODO  我的注释待完善
-	 * @return
-	 */
-	public static Connection getConnection() {
+	
+	public static Connection initConn() {
 		Connection conn = null;
 		// 创建用于操作配置文件的对象
 		Properties p = d.getProperties();
@@ -60,7 +59,7 @@ public class DbUtils {
 				Class.forName("org.gjt.mm.mysql.Driver");
 				String url = "jdbc:mysql://" + ip + ":" + port + "/"
 						+ sidordbname + "?user=" + username + "&password="
-						+ password + "&useUnicode=true&characterEncoding=utf8";
+						+ password + "&useUnicode=true&characterEncoding=GBK";
 				// myDB为数据库名
 				conn = DriverManager.getConnection(url);
 
@@ -70,6 +69,19 @@ public class DbUtils {
 //			System.out.println("数据库链接创建失败" + e.getMessage());
 		}
 		return conn;
+	}
+	
+	
+	/**
+	 * 该方法的作用 获取与数据库的链接
+	 *  //TODO  我的注释待完善
+	 * @return
+	 */
+	public static Connection getConnection() {
+		if(conn==null){
+			return initConn();
+		}
+		return null;
 	}
 	public static void close(ResultSet rs , PreparedStatement stat ,Connection conn){
 		if(rs != null){
