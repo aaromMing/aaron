@@ -42,6 +42,8 @@ public class ChangeInfo extends JFrame {
 
 	private JPasswordField jp1 = null;
 
+	private JLabel jlpOldPasswd = null;
+	
 	private JLabel jlp2 = null;
 
 	private JPasswordField jP2 = null;
@@ -55,6 +57,8 @@ public class ChangeInfo extends JFrame {
 	private JLabel jlpetname = null;
 
 	private JTextField jtfpetname = null;
+	
+	private JTextField jtfOldPasswd = null;
 
 	private JRadioButton jrdboy = null;
 
@@ -76,6 +80,7 @@ public class ChangeInfo extends JFrame {
 		u = utemp;
 		initialize();
 	}
+	
 
 	/**
 	 * This method initializes this
@@ -83,7 +88,7 @@ public class ChangeInfo extends JFrame {
 	 * @return void
 	 */
 	private void initialize() {
-		this.setSize(359, 324);
+		this.setSize(359, 384);
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/com/neusoft/chatroom/client/vo/Icon.jpg")));
 		this.setContentPane(getJContentPane());
 		this.setTitle("用户信息修改");
@@ -107,32 +112,32 @@ public class ChangeInfo extends JFrame {
 	private JPanel getJContentPane() {
 		if (jContentPane == null) {
 			jlpetname = new JLabel();
-			jlpetname.setBounds(new Rectangle(25, 217, 63, 27));
-			jlpetname.setText("     昵  称");
+			jlpetname.setBounds(new Rectangle(22, 251, 63, 27));
+			jlpetname.setText("\u6635    \u79F0");
 			jlsex = new JLabel();
-			jlsex.setBounds(new Rectangle(25, 184, 61, 27));
-			jlsex.setText("     性  别");
+			jlsex.setBounds(new Rectangle(22, 218, 61, 27));
+			jlsex.setText("\u6027    \u522B");
 			jlmail = new JLabel();
-			jlmail.setBounds(new Rectangle(26, 152, 60, 25));
-			jlmail.setText("    邮  箱");
+			jlmail.setBounds(new Rectangle(22, 186, 60, 25));
+			jlmail.setText("\u90AE    \u7BB1");
 			jlp2 = new JLabel();
-			jlp2.setBounds(new Rectangle(12, 119, 76, 28));
-			jlp2.setText("    确认密码");
+			jlp2.setBounds(new Rectangle(22, 153, 76, 28));
+			jlp2.setText("\u786E\u8BA4\u5BC6\u7801");
 			jlp = new JLabel();
-			jlp.setBounds(new Rectangle(32, 89, 57, 25));
-			jlp.setText("   密  码");
-			jLwel = new JLabel();
-			jLwel.setBounds(new Rectangle(28, 6, 305, 35));
-			jLwel.setText("      用 户 信 息 修 改");
-			jLwel.setFont(new Font("新宋体",Font.BOLD,20));
+			jlp.setBounds(new Rectangle(22, 123, 57, 25));
+			jlp.setText("\u5BC6    \u7801");
 			jluname = new JLabel();
-			jluname.setBounds(new Rectangle(30, 51, 59, 28));
-			jluname.setText("  用户名");
+			jluname.setBounds(new Rectangle(22, 90, 59, 28));
+			jluname.setText("\u7528 \u6237 \u540D");
+			jlpOldPasswd = new JLabel();
+			jlpOldPasswd.setBounds(new Rectangle(22, 56, 76, 24));
+			jlpOldPasswd.setText("\u65E7 \u5BC6 \u7801");
 			jContentPane = new JPanel();
 			jContentPane.setBackground(new Color(255,255,220));
 			jContentPane.setLayout(null);
+			jContentPane.add(jlpOldPasswd, null);
+			jContentPane.add(getJtfOldPasswd(), null);
 			jContentPane.add(jluname, null);
-			jContentPane.add(jLwel, null);
 			jContentPane.add(getJtuname(), null);
 			jContentPane.add(jlp, null);
 			jContentPane.add(getJp1(), null);
@@ -147,6 +152,11 @@ public class ChangeInfo extends JFrame {
 			jContentPane.add(getJrbgirl(), null);
 			jContentPane.add(getJttj(), null);
 			jContentPane.add(getJbrew(), null);
+			
+			JLabel label = new JLabel("\u7528\u6237\u4FE1\u606F\u4FEE\u6539");
+			label.setFont(new Font("幼圆", Font.BOLD, 18));
+			label.setBounds(131, 22, 122, 24);
+			jContentPane.add(label);
 		}
 		return jContentPane;
 	}
@@ -161,7 +171,7 @@ public class ChangeInfo extends JFrame {
 			jtuname = new JTextField();
 			jtuname.setText(u.getName());
 			jtuname.setEnabled(false);
-			jtuname.setBounds(new Rectangle(96, 54, 240, 27));
+			jtuname.setBounds(new Rectangle(98, 90, 231, 27));
 		}
 		return jtuname;
 	}
@@ -175,7 +185,7 @@ public class ChangeInfo extends JFrame {
 		if (jp1 == null) {
 			jp1 = new JPasswordField();
 			jp1.setText(u.getPass());
-			jp1.setBounds(new Rectangle(96, 84, 239, 29));
+			jp1.setBounds(new Rectangle(98, 118, 231, 29));
 		}
 		return jp1;
 	}
@@ -189,7 +199,7 @@ public class ChangeInfo extends JFrame {
 		if (jP2 == null) {
 			jP2 = new JPasswordField();
 			jP2.setText(u.getPass());
-			jP2.setBounds(new Rectangle(98, 116, 237, 31));
+			jP2.setBounds(new Rectangle(98, 150, 231, 31));
 			jP2.addFocusListener(new java.awt.event.FocusAdapter() {
 				public void focusLost(java.awt.event.FocusEvent e) {
 					String repass = jP2.getText();
@@ -213,7 +223,7 @@ public class ChangeInfo extends JFrame {
 		if (jtfage == null) {
 			jtfage = new JTextField();
 			jtfage.setText(u.getMail());
-			jtfage.setBounds(new Rectangle(96, 153, 239, 28));
+			jtfage.setBounds(new Rectangle(98, 187, 231, 28));
 			jtfage.addFocusListener(new java.awt.event.FocusAdapter() {
 				public void focusLost(java.awt.event.FocusEvent e) {
 					boolean j = jtfage.getText().contains("@");
@@ -242,9 +252,17 @@ public class ChangeInfo extends JFrame {
 		if (jtfpetname == null) {
 			jtfpetname = new JTextField();
 			jtfpetname.setText(u.getPetname());
-			jtfpetname.setBounds(new Rectangle(100, 216, 231, 27));
+			jtfpetname.setBounds(new Rectangle(98, 250, 225, 25));
 		}
 		return jtfpetname;
+	}
+	
+	private JTextField getJtfOldPasswd() {
+		if (jtfOldPasswd == null) {
+			jtfOldPasswd = new JTextField();
+			jtfOldPasswd.setBounds(new Rectangle(98, 56, 231, 30));
+		}
+		return jtfOldPasswd;
 	}
 
 	/**
@@ -255,7 +273,7 @@ public class ChangeInfo extends JFrame {
 	private JRadioButton getJrdboy() {
 		if (jrdboy == null) {
 			jrdboy = new JRadioButton();
-			jrdboy.setBounds(new Rectangle(103, 187, 78, 27));
+			jrdboy.setBounds(new Rectangle(101, 221, 78, 27));
 			jrdboy.setText("男");
 			if(u.getSex().equals("男"))
 				jrdboy.setSelected(true);
@@ -271,7 +289,7 @@ public class ChangeInfo extends JFrame {
 	private JRadioButton getJrbgirl() {
 		if (jrbgirl == null) {
 			jrbgirl = new JRadioButton();
-			jrbgirl.setBounds(new Rectangle(204, 188, 72, 22));
+			jrbgirl.setBounds(new Rectangle(202, 222, 72, 22));
 			jrbgirl.setText("女");
 			if(u.getSex().equals("女"))
 				jrbgirl.setSelected(true);
@@ -287,10 +305,11 @@ public class ChangeInfo extends JFrame {
 	private JButton getJttj() {
 		if (jttj == null) {
 			jttj = new JButton();
-			jttj.setBounds(new Rectangle(111, 249, 76, 33));
+			jttj.setBounds(new Rectangle(108, 285, 76, 33));
 			jttj.setText("提交");
 			jttj.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
+					String oldpasswd = jtfOldPasswd.getText();
 					 if(jtuname.getText().equals("")||jp1.getText().equals("")
 							 ||jP2.getText().equals("")||jtfage.getText().equals("")
 							 ||jtfpetname.getText().equals("")){
@@ -299,8 +318,10 @@ public class ChangeInfo extends JFrame {
 						 errormessage("修改错误","选项必须全部填写！", 0);
 					 }else if(!jp1.getText().equals(jP2.getText())){
 						 errormessage("修改错误","两次密码不一致！", 0);
+					 }else if (!u.getPass().equals(oldpasswd)){
+						 errormessage("修改错误","原密码输入错误!", 0);
 					 }
-					 else{						
+					 else{		
 						//u.setName(jtuname.getText());
 						u.setPass(jp1.getText());
 						u.setPetname(jtfpetname.getText());
@@ -352,7 +373,7 @@ public class ChangeInfo extends JFrame {
 	private JButton getJbrew() {
 		if (jbrew == null) {
 			jbrew = new JButton();
-			jbrew.setBounds(new Rectangle(235, 249, 75, 32));
+			jbrew.setBounds(new Rectangle(234, 285, 75, 32));
 			jbrew.setText("取消");
 			jbrew.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -363,5 +384,4 @@ public class ChangeInfo extends JFrame {
 		}
 		return jbrew;
 	}
-
 }  //  @jve:decl-index=0:visual-constraint="247,41"

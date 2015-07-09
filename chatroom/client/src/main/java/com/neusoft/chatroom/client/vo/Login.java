@@ -210,7 +210,7 @@ public class Login extends JFrame {
 	private JButton getBl() {
 		if (bl == null) {
 			bl = new JButton();
-			bl.setBounds(new Rectangle(73, 180, 69, 30));
+			bl.setBounds(new Rectangle(83, 180, 69, 30));
 			bl.setText("µÇÂ¼");
 			bl.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
@@ -270,7 +270,7 @@ public class Login extends JFrame {
 	private JButton getB3() {
 		if (b3 == null) {
 			b3 = new JButton();
-			b3.setBounds(new Rectangle(191, 180, 69, 30));
+			b3.setBounds(new Rectangle(207, 180, 69, 30));
 			b3.setText("×¢²á");
 			b3.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {

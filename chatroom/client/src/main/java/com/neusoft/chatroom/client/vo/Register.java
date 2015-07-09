@@ -293,7 +293,7 @@ public class Register extends JFrame {
 					u.setMail(jtfage.getText());
 					u.setPower("普通用户");
 					if(jrdboy.isSelected()){
-						u.setSex("1");
+						u.setSex("男");
 					}
 					if(jrbgirl.isSelected()){
 						u.setSex("女");

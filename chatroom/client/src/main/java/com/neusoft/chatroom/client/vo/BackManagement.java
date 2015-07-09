@@ -21,6 +21,7 @@ public class BackManagement extends JFrame{
 	JComboBox w =new JComboBox();
 	JLabel f =new JLabel("用户列表:");
 	JLabel lu =new JLabel("用户名");//作用在窗体上显示文字
+	JLabel oldm =new JLabel("旧密码");
 	JLabel m =new JLabel("密码");
 	JLabel mm =new JLabel("确认密码");
 	JLabel u =new JLabel("邮箱");
@@ -31,6 +32,7 @@ public class BackManagement extends JFrame{
 	JButton j = new JButton("提交");
 	JButton c = new JButton("重填");
 	JButton q = new JButton("取消");
+	JPasswordField pold = new JPasswordField(10);
 	JPasswordField p0 = new JPasswordField(10);
 	JPasswordField p1 = new JPasswordField(10);
 	
@@ -48,8 +50,8 @@ public class BackManagement extends JFrame{
 		w.addItem("管理员");
 		g.add(r1);
 		g.add(r2);
-		p0.setEchoChar('^');//设置密码框显示的字符
-		p1.setEchoChar('^');
+//		p0.setEchoChar('^');//设置密码框显示的字符
+//		p1.setEchoChar('^');
 		this.setTitle("即时通信系统－－后台管理");
 		this.setSize(500,500);
 		this.setLocation(350,280);
@@ -59,6 +61,10 @@ public class BackManagement extends JFrame{
 		this.add(b);
 		this.add(lu);
 		this.add(t0);
+		
+		this.add(oldm);
+		this.add(pold);
+		
 		this.add(m);
 		this.add(p0);
 		this.add(mm);

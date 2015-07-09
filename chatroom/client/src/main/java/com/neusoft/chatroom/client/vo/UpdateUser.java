@@ -151,7 +151,7 @@ public class UpdateUser extends JFrame {
 			jLabel13.setText("        ” œ‰£∫");
 			jLabel11 = new JLabel();
 			jLabel11.setBounds(new Rectangle(41, 126, 73, 32));
-			jLabel11.setText("       √‹¬Î£∫");
+			jLabel11.setText("       1√‹¬Î£∫");
 			jLabel1 = new JLabel();
 			jLabel1.setBounds(new Rectangle(39, 87, 75, 30));
 			jLabel1.setText("    ”√ªß√˚£∫");

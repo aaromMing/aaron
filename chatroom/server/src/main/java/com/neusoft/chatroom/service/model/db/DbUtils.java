@@ -81,7 +81,7 @@ public class DbUtils {
 		if(conn==null){
 			return initConn();
 		}
-		return null;
+		return conn;
 	}
 	public static void close(ResultSet rs , PreparedStatement stat ,Connection conn){
 		if(rs != null){
