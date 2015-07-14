@@ -2,6 +2,8 @@ package com.neusoft.chatroom.service.model.service;
 
 import java.lang.reflect.*;
 
+import com.neusoft.chatroom.api.service.IUserService;
+
 public class OwnerInvocationHandler implements InvocationHandler {
 	IUserService IUserService;
 

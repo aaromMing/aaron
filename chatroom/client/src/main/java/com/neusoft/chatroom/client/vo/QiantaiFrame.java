@@ -30,13 +30,13 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
+import com.neusoft.chatroom.api.entity.Message;
+import com.neusoft.chatroom.api.entity.Userinfo;
+import com.neusoft.chatroom.api.service.StateCode;
 import com.neusoft.chatroom.client.model.GetIP;
-import com.neusoft.chatroom.client.model.StateCode;
 import com.neusoft.chatroom.client.model.StringEdit;
 import com.neusoft.chatroom.client.tool.GetFileThread;
 import com.neusoft.chatroom.client.tool.MessageThread;
-import com.neusoft.chatroom.service.model.db.entity.Message;
-import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 
 public class QiantaiFrame extends JFrame {
 

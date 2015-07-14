@@ -3,8 +3,9 @@ package com.neusoft.chatroom.client.model;
 import java.sql.Timestamp;
 import java.util.List;
 
-import com.neusoft.chatroom.service.model.db.entity.Message;
-import com.neusoft.chatroom.service.model.db.entity.Userinfo;
+import com.neusoft.chatroom.api.entity.Message;
+import com.neusoft.chatroom.api.entity.Userinfo;
+import com.neusoft.chatroom.api.service.StateCode;
 
 public class StringEdit {
 	// 拆分出协议的头部分 跟用户相关的协议 ：

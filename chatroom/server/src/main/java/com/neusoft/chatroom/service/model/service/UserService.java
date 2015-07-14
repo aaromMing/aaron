@@ -6,13 +6,14 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.neusoft.chatroom.api.entity.Message;
+import com.neusoft.chatroom.api.entity.OnlineUser;
+import com.neusoft.chatroom.api.entity.Userinfo;
+import com.neusoft.chatroom.api.service.IUserService;
 import com.neusoft.chatroom.service.model.db.DbUtils;
 import com.neusoft.chatroom.service.model.db.MessageDAO;
 import com.neusoft.chatroom.service.model.db.OnlineUserDAO;
 import com.neusoft.chatroom.service.model.db.UserinfoDAO;
-import com.neusoft.chatroom.service.model.db.entity.Message;
-import com.neusoft.chatroom.service.model.db.entity.OnlineUser;
-import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 
 public class UserService implements IUserService {
 	

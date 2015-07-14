@@ -20,12 +20,12 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
+import com.neusoft.chatroom.api.entity.Message;
+import com.neusoft.chatroom.api.entity.Userinfo;
+import com.neusoft.chatroom.api.service.StateCode;
 import com.neusoft.chatroom.client.model.GetIP;
-import com.neusoft.chatroom.client.model.StateCode;
 import com.neusoft.chatroom.client.model.StringEdit;
 import com.neusoft.chatroom.client.tool.SendFileThread;
-import com.neusoft.chatroom.service.model.db.entity.Message;
-import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 
 public class FileTransfer extends JFrame {
 

@@ -1,9 +1,9 @@
-package com.neusoft.chatroom.service.model.service;
+package com.neusoft.chatroom.api.service;
 
 import java.util.List;
 
-import com.neusoft.chatroom.service.model.db.entity.Message;
-import com.neusoft.chatroom.service.model.db.entity.Userinfo;
+import com.neusoft.chatroom.api.entity.Message;
+import com.neusoft.chatroom.api.entity.Userinfo;
 
 public interface IUserService extends IService {
 

@@ -7,8 +7,7 @@ import java.net.Socket;
 
 import javax.swing.JTextArea;
 
-import com.neusoft.chatroom.client.model.GetIP;
-import com.neusoft.chatroom.client.model.StateCode;
+import com.neusoft.chatroom.api.service.StateCode;
 import com.neusoft.chatroom.client.model.StringEdit;
 
 

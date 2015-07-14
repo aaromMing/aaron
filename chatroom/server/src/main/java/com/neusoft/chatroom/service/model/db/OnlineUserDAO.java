@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.neusoft.chatroom.service.model.db.entity.OnlineUser;
+import com.neusoft.chatroom.api.entity.OnlineUser;
 
 
 public class OnlineUserDAO {

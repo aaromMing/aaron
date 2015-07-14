@@ -1,6 +1,10 @@
 package com.neusoft.chatroom.service.model.service;
 
-import java.lang.reflect.*;
+import java.lang.reflect.InvocationHandler;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
+import com.neusoft.chatroom.api.service.IService;
 
 public class ServiceInvocationHandler implements InvocationHandler {
 	IService IService;

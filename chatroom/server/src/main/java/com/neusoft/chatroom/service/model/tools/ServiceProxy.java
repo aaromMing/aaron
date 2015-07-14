@@ -2,8 +2,8 @@ package com.neusoft.chatroom.service.model.tools;
 
 import java.lang.reflect.Proxy;
 
-import com.neusoft.chatroom.service.model.service.IService;
-import com.neusoft.chatroom.service.model.service.IUserService;
+import com.neusoft.chatroom.api.service.IService;
+import com.neusoft.chatroom.api.service.IUserService;
 import com.neusoft.chatroom.service.model.service.ServiceInvocationHandler;
 import com.neusoft.chatroom.service.model.service.UserService;
 

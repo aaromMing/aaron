@@ -1,4 +1,4 @@
-package com.neusoft.chatroom.service.model.tools;
+package com.neusoft.chatroom.api.service;
 
 public class StateCode {
 	public static final String LOGIN = "101";//µÇÂ¼

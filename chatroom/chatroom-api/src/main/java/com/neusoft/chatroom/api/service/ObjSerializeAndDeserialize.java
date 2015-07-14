@@ -1,4 +1,4 @@
-package com.neusoft.chatroom.service.model.tools;
+package com.neusoft.chatroom.api.service;
 
 import java.io.File;
 import java.io.FileInputStream;

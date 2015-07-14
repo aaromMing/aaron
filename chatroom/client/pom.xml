@@ -27,8 +27,8 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.neusoft.chatroom</groupId>
-			<artifactId>chatService</artifactId>
-			<version>1.2.3</version>
+			<artifactId>chatroom-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 

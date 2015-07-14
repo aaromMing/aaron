@@ -6,8 +6,9 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.neusoft.chatroom.service.model.db.entity.Userinfo;
-import com.neusoft.chatroom.service.model.service.IUserService;
+import com.neusoft.chatroom.api.entity.Userinfo;
+import com.neusoft.chatroom.api.service.IUserService;
+import com.neusoft.chatroom.api.service.StateCode;
 import com.neusoft.chatroom.service.model.service.UserService;
 
 public class SendThread extends Thread {

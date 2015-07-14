@@ -7,7 +7,7 @@ import java.sql.Connection;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.neusoft.chatroom.service.model.db.entity.Message;
+import com.neusoft.chatroom.api.entity.Message;
 
 public class MessageDAOTest {
 	
