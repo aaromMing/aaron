@@ -124,7 +124,6 @@ public class MessageDAO {
 			Message us = new Message();
 			us.setPetname(rs.getString("petname"));
 			us.setId(rs.getInt("msg_id"));
-			//System.out.println("    11      ");
             us.setSend_id(rs.getInt("send_id"));
             us.setGet_id(rs.getInt("get_id"));
 			us.setMessage(rs.getString("message"));

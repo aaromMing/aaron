@@ -13,8 +13,6 @@ import java.util.Properties;
 public class DbUtils {
 	private static DbUtils d = new DbUtils();
 	
-	private static Connection conn = null;
-	
 	private DbUtils(){//不允许在类的外边创建对象
 		
 	}
@@ -78,10 +76,7 @@ public class DbUtils {
 	 * @return
 	 */
 	public static Connection getConnection() {
-		if(conn==null){
-			return initConn();
-		}
-		return conn;
+		return initConn();
 	}
 	public static void close(ResultSet rs , PreparedStatement stat ,Connection conn){
 		if(rs != null){

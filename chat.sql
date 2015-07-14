@@ -27,7 +27,7 @@ CREATE TABLE `message` (
   `message` varchar(1024) DEFAULT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`msg_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=gbk;
 
 -- ----------------------------
 -- Records of message
@@ -44,7 +44,7 @@ CREATE TABLE `onlineuser` (
   `lasttime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `State` decimal(10,0) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=gbk;
 
 -- ----------------------------
 -- Records of onlineuser
@@ -58,10 +58,10 @@ INSERT INTO `onlineuser` VALUES ('2', '1', '169.254.156.25', '2015-07-06 23:36:2
 DROP TABLE IF EXISTS `userinfo`;
 CREATE TABLE `userinfo` (
   `user_id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
-  `pass` varchar(10) CHARACTER SET latin1 DEFAULT NULL,
-  `petname` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
-  `mail` varchar(50) CHARACTER SET latin1 DEFAULT NULL,
+  `name` varchar(50) CHARACTER SET gbk DEFAULT NULL,
+  `pass` varchar(10) CHARACTER SET gbk DEFAULT NULL,
+  `petname` varchar(50) CHARACTER SET gbk DEFAULT NULL,
+  `mail` varchar(50) CHARACTER SET gbk DEFAULT NULL,
   `sex` varchar(2) DEFAULT NULL,
   `power` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`user_id`)

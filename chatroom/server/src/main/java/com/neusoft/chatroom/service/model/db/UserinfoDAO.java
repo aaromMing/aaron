@@ -72,12 +72,13 @@ public class UserinfoDAO {
 	
 	public boolean delete(Userinfo u){//根据用户的ID删除该用户信息
 		String sql ="delete from userinfo where user_id =?";
+		System.out.println(sql);
 		int i = -1;
 		//插入数据
 		try {
 			PreparedStatement stat = con.prepareStatement(sql);
 			stat.setInt(1, u.getId());
-			i = stat.executeUpdate();
+//			i = stat.executeUpdate();
 		} catch (SQLException e) {
 			System.out.println("在删除用户的时候出错了" + e.getMessage());
 		}

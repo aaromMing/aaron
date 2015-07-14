@@ -6,9 +6,11 @@ import java.util.List;
 
 
 
+
 import com.neusoft.chatroom.service.model.db.Message;
 import com.neusoft.chatroom.service.model.db.OnlineUser;
 import com.neusoft.chatroom.service.model.db.Userinfo;
+import com.neusoft.chatroom.service.model.service.IUserService;
 import com.neusoft.chatroom.service.model.service.UserService;
 
 public class StringEdit {
@@ -102,7 +104,7 @@ public class StringEdit {
 		s = s.substring(i+1);
 		String v[] = s.split(",");
 		Userinfo u = new Userinfo();
-		UserService us = new UserService();
+		IUserService us = new UserService();
 		u = us.chaxundanyi(v[0]);
 		return u;
 	
@@ -121,7 +123,7 @@ public class StringEdit {
 	  }*/
 	public static String hechengmessages(List l){
 		  String message ="";
-		  UserService us = new UserService();
+		  IUserService us = new UserService();
 	      for(int i = 0;i<l.size();i++){
 	    	  Message m = (Message)l.get(i);
 	    	  if(m.getMessage().length()>=11){

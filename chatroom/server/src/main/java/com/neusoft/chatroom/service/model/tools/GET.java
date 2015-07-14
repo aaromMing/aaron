@@ -8,11 +8,10 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.neusoft.chatroom.service.model.db.*;
+import com.neusoft.chatroom.service.model.db.Message;
+import com.neusoft.chatroom.service.model.db.Userinfo;
+import com.neusoft.chatroom.service.model.service.IUserService;
 import com.neusoft.chatroom.service.model.service.UserService;
-import com.neusoft.chatroom.service.model.tools.LiGong;
-import com.neusoft.chatroom.service.model.tools.StateCode;
-import com.neusoft.chatroom.service.model.tools.StringEdit;
 
 
 
@@ -22,6 +21,8 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 	LiGong l = null;
 	Userinfo user = null;
 	Thread t1 = null;//发送的线程的对象
+	IUserService us =ServiceProxy.getOwnerProxy(UserService.class);
+	
 	public GET(Socket stemp,Socket sendtemp,Userinfo u,LiGong xiaoli,Thread t1){
 		s = stemp;
 		sends = sendtemp;
@@ -40,7 +41,7 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 				if(head.equals(StateCode.LOGIN)){
 					//登录
 					Userinfo u = StringEdit.chaifenUser(request);
-					UserService us = new UserService();
+					
 					boolean blogin = us.denglu(u,u.getIp());
 					user.setId(u.getId());
 					user.setName(u.getName());
@@ -63,7 +64,6 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 				if(head.equals(StateCode.REGISTER)){
 					//注册
 					Userinfo u = StringEdit.chaifenUser(request);
-					UserService us = new UserService();
 					//u.setPower("普通用户");
 					boolean blogin = us.zhuce(u);
 					if(blogin){
@@ -75,7 +75,6 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 					}
 				}
 				if(head.equals(StateCode.DELETEONLINEUSER)){
-					UserService us = new UserService();
 					int a = StringEdit.chaifenUserID1(request);
 					boolean blogin = us.shanchuzaixianxinxi(a);
 					if(blogin){
@@ -89,7 +88,6 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 				if(head.equals(StateCode.SENDMESSAGE)){
 					//注册
 					Message u = StringEdit.chaifenmessage(request);
-					UserService us = new UserService();
 					boolean blogin = us.charuxinxi(u);
 					if(blogin){
 						//注册成功
@@ -102,7 +100,6 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 				if(head.equals(StateCode.USERUPDATE)){
 					//注册
 					Userinfo u = StringEdit.chaifenUser(request);
-					UserService us = new UserService();
 					
 					boolean blogin = us.xiugai(u);
 					if(blogin){
@@ -126,7 +123,6 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 						p.println(s);
 				}
 				if(head.equals(StateCode.SELECTALL)){
-					UserService us = new UserService();
 					List l = new ArrayList();
 					l = us.selectAll();
 					String alluser = StringEdit.hechengUserS(StateCode.SUCCESS,l);
@@ -134,7 +130,6 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 				}
 				if(head.equals(StateCode.SELECTALLONLINE)){
 					//Userinfo u = StringEdit.chaifenUser(request);
-					UserService us = new UserService();
 				
 					List l = new ArrayList();
 					l = us.selectAllonline();
@@ -145,7 +140,6 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 				if(head.equals(StateCode.DELETEUSER)){
 					//注册
 					Userinfo u = StringEdit.chaifenUser(request);
-					UserService us = new UserService();
 					//u.setPower("普通用户");
 					boolean blogin = us.delete(u);
 					if(blogin){
@@ -159,7 +153,6 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 				
 				if(head.equals(StateCode.EXIT)){
 					 //用户退出
-					UserService us = new UserService();
 					us.tuichu(user);
 					t1.stop();
 					s.close();
@@ -171,7 +164,6 @@ public class GET extends Thread{//获取客户端的请求，并处理该请求，响应客户端
 		}catch(Exception e){
 			System.out.println("客户端已经退出了");
 			//把用户的状态修改成0不在线
-			UserService us = new UserService();
 			us.tuichu(user);
 			t1.stop();
 			try {

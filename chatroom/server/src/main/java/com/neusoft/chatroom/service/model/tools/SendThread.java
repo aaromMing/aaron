@@ -8,6 +8,7 @@ import java.util.List;
 
 import com.neusoft.chatroom.service.model.db.Message;
 import com.neusoft.chatroom.service.model.db.Userinfo;
+import com.neusoft.chatroom.service.model.service.IUserService;
 import com.neusoft.chatroom.service.model.service.UserService;
 
 public class SendThread extends Thread {
@@ -27,7 +28,7 @@ public class SendThread extends Thread {
 			//每隔3秒中去数据库中查找当前的登录人的信息
 			//有的话则发送
 			//没有则
-			UserService us = new UserService();
+			IUserService us = new UserService();
 			List l = new ArrayList();
 			String messagelist = "";
 			l = us.getMessage(u);
