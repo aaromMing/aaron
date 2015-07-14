@@ -31,12 +31,12 @@ import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 
 import com.neusoft.chatroom.client.model.GetIP;
-import com.neusoft.chatroom.client.model.Message;
 import com.neusoft.chatroom.client.model.StateCode;
 import com.neusoft.chatroom.client.model.StringEdit;
-import com.neusoft.chatroom.client.model.Userinfo;
 import com.neusoft.chatroom.client.tool.GetFileThread;
 import com.neusoft.chatroom.client.tool.MessageThread;
+import com.neusoft.chatroom.service.model.db.entity.Message;
+import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 
 public class HoutaimainFrame extends JFrame {
 

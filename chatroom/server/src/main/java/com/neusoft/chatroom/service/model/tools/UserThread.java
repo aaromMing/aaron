@@ -2,7 +2,7 @@ package com.neusoft.chatroom.service.model.tools;
 
 import java.net.Socket;
 
-import com.neusoft.chatroom.service.model.db.Userinfo;
+import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 
 public class UserThread extends Thread {
 	Socket so = null;

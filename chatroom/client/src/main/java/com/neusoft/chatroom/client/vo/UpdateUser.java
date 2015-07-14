@@ -1,6 +1,5 @@
 package com.neusoft.chatroom.client.vo;
 
-import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Rectangle;
@@ -16,10 +15,10 @@ import java.util.regex.Pattern;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JFrame;
 import javax.swing.JPasswordField;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -27,7 +26,7 @@ import javax.swing.JTextField;
 import com.neusoft.chatroom.client.model.GetIP;
 import com.neusoft.chatroom.client.model.StateCode;
 import com.neusoft.chatroom.client.model.StringEdit;
-import com.neusoft.chatroom.client.model.Userinfo;
+import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 
 public class UpdateUser extends JFrame {
 

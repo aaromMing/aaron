@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.neusoft.chatroom.service.model.db.entity.Message;
+import com.neusoft.chatroom.service.model.db.entity.Userinfo;
+
 public class MessageDAO {
 	private Connection con = null;
 	public MessageDAO(Connection temp){

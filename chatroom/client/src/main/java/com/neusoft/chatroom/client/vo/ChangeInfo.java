@@ -23,7 +23,7 @@ import javax.swing.JTextField;
 import com.neusoft.chatroom.client.model.GetIP;
 import com.neusoft.chatroom.client.model.StateCode;
 import com.neusoft.chatroom.client.model.StringEdit;
-import com.neusoft.chatroom.client.model.Userinfo;
+import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 
 
 public class ChangeInfo extends JFrame {

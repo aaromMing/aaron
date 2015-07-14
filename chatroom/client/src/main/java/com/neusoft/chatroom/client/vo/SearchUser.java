@@ -11,7 +11,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import com.neusoft.chatroom.client.model.Userinfo;
+import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 public class SearchUser extends JFrame {
 
 	private static final long serialVersionUID = 1L;

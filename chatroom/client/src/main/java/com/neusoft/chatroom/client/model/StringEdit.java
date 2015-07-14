@@ -3,6 +3,9 @@ package com.neusoft.chatroom.client.model;
 import java.sql.Timestamp;
 import java.util.List;
 
+import com.neusoft.chatroom.service.model.db.entity.Message;
+import com.neusoft.chatroom.service.model.db.entity.Userinfo;
+
 public class StringEdit {
 	// 拆分出协议的头部分 跟用户相关的协议 ：
 	// 协议码|id,name,pass,petname,mail,sex,power,ip
@@ -11,7 +14,7 @@ public class StringEdit {
 
 	// ----------合成字符串(把一个对象的所有属性合成一个字符串)
 	public static String hechengUser(String head,
-			com.neusoft.chatroom.client.model.Userinfo u, String ip) {
+			 Userinfo u, String ip) {
 		String s = "";
 		s = head + "|" + u.getId() + "," + u.getName() + "," + u.getPass()
 				+ "," + u.getPetname() + "," + u.getMail() + "," + u.getSex()

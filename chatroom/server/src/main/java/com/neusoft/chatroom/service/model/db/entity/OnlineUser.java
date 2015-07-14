@@ -1,6 +1,4 @@
-package com.neusoft.chatroom.client.model;
-
-
+package com.neusoft.chatroom.service.model.db.entity;
 
 import java.sql.Timestamp;
 
@@ -10,15 +8,14 @@ public class OnlineUser {
 	private String ip;
 	private Timestamp lasttime;
 	private int state ;//0代表 不在线 1代表在线
-	
 	private String petname;	
+	
 	public String getPetname() {
 		return petname;
 	}
 	public void setPetname(String petname) {
 		this.petname = petname;
 	}
-	
 	public int getId() {
 		return id;
 	}

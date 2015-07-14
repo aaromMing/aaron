@@ -41,5 +41,7 @@
 	<modules>
 		<module>client</module>
 		<module>server</module>
+		<module>server-api</module>
+		<module>chatroom-api</module>
 	</modules>
 </project>

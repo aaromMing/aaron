@@ -3,13 +3,9 @@ package com.neusoft.chatroom.service.model.tools;
 import java.sql.Timestamp;
 import java.util.List;
 
-
-
-
-
-import com.neusoft.chatroom.service.model.db.Message;
-import com.neusoft.chatroom.service.model.db.OnlineUser;
-import com.neusoft.chatroom.service.model.db.Userinfo;
+import com.neusoft.chatroom.service.model.db.entity.Message;
+import com.neusoft.chatroom.service.model.db.entity.OnlineUser;
+import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 import com.neusoft.chatroom.service.model.service.IUserService;
 import com.neusoft.chatroom.service.model.service.UserService;
 

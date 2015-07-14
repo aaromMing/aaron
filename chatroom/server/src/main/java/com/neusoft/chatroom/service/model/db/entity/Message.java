@@ -1,4 +1,4 @@
-package com.neusoft.chatroom.service.model.db;
+package com.neusoft.chatroom.service.model.db.entity;
 
 import java.sql.Timestamp;
 

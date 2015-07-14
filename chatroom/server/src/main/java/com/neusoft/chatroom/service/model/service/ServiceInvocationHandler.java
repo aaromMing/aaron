@@ -13,7 +13,9 @@ public class ServiceInvocationHandler implements InvocationHandler {
 			throws IllegalAccessException {
 		System.out.println(method);
 		try {
-			return method.invoke(IService, args);
+			Object invoke = method.invoke(IService, args);
+			
+			return invoke;
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
 		} catch (InvocationTargetException e) {

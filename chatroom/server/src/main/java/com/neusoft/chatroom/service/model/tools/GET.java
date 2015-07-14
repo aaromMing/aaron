@@ -8,8 +8,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.neusoft.chatroom.service.model.db.Message;
-import com.neusoft.chatroom.service.model.db.Userinfo;
+import com.neusoft.chatroom.service.model.db.entity.Message;
+import com.neusoft.chatroom.service.model.db.entity.Userinfo;
 import com.neusoft.chatroom.service.model.service.IUserService;
 import com.neusoft.chatroom.service.model.service.UserService;
 
