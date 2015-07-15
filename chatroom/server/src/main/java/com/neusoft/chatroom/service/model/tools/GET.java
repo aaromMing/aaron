@@ -8,6 +8,8 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.commons.beanutils.PropertyUtils;
+
 import com.neusoft.chatroom.api.entity.Message;
 import com.neusoft.chatroom.api.entity.OnlineUser;
 import com.neusoft.chatroom.api.entity.Userinfo;
@@ -36,26 +38,16 @@ public class GET extends Thread {// 获取客户端的请求，并处理该请求，响应客户端
 	public void run() {
 		try {
 			while (true) {
-				// Userinfo info = new Userinfo();
-				// info.setStateCode(StateCode.SUCCESS);
-				// ObjSerializeAndDeserialize.SerializeObj(s.getOutputStream(),
-				// info);
+				Object getObj = ObjSerializeAndDeserialize.Deserialize(s
+						.getInputStream());
+				Object stateCode = PropertyUtils.getSimpleProperty(getObj,
+						"stateCode");
 
-				StateCode sc = convertMsg();
-
-				String stateCode = sc.getStateCode();
-
-				// PrintStream p = new PrintStream(s.getOutputStream());
-				// BufferedReader b = new BufferedReader(new InputStreamReader
-				// (s.getInputStream()));
-				// String request = b.readLine();
-				// String head = StringEdit.getStateCode(request);
-				// head = head.trim();
-				if (stateCode.equals(StateCode.LOGIN)) {
+				if (StateCode.LOGIN.equals(stateCode)) {
 					// 登录
 					Userinfo ui = null;
-					if (sc instanceof Userinfo) {
-						ui = (Userinfo) sc;
+					if (getObj instanceof Userinfo) {
+						ui = (Userinfo) getObj;
 					}
 					boolean blogin = us.denglu(ui);
 					if (blogin) {
@@ -183,21 +175,5 @@ public class GET extends Thread {// 获取客户端的请求，并处理该请求，响应客户端
 
 			}
 		}
-	}
-
-	private StateCode convertMsg() throws IOException {
-		StateCode sc = null;
-		Object getObj = ObjSerializeAndDeserialize.Deserialize(s
-				.getInputStream());
-		if (getObj instanceof Userinfo) {
-			sc = (Userinfo) getObj;
-		} else if (getObj instanceof Message) {
-			sc = (Message) getObj;
-		} else if (getObj instanceof Message) {
-			sc = (Message) getObj;
-		} else if (getObj instanceof OnlineUser) {
-			sc = (OnlineUser) getObj;
-		}
-		return sc;
 	}
 }
