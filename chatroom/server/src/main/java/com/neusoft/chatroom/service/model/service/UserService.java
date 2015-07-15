@@ -26,7 +26,7 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public boolean denglu(Userinfo u, String ip) {// 客户端的IP地址
+	public boolean denglu(Userinfo u) {// 客户端的IP地址
 		boolean b = false;
 		Connection con = DbUtils.getConnection();
 		UserinfoDAO ud = new UserinfoDAO(con);
@@ -41,7 +41,7 @@ public class UserService implements IUserService {
 			OnlineUser o = new OnlineUser();
 			o.setUser_id(u.getId());
 			boolean bonline = od.findUser_id(o);
-			o.setIp(ip);
+			o.setIp(u.getIp());
 			Date d = new Date();
 			Timestamp t = new Timestamp(d.getTime());
 			o.setLasttime(t);

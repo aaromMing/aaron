@@ -1,6 +1,10 @@
 package com.neusoft.chatroom.api.service;
 
-public class StateCode {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class StateCode implements Serializable {
+	
 	public static final String LOGIN = "101";//登录
 	public static final String REGISTER = "102";//注册-普通用户 添加-管理员
 	public static final String EXIT = "103";//退出
@@ -16,4 +20,16 @@ public class StateCode {
 	public static final String DELETEONLINEUSER = "113";//查询所有人的信息
 	public static final String SUCCESS = "yes"; //返回信息
 	public static final String ERROR = "no"; //返回信息
+	
+	private String stateCode;
+
+	public String getStateCode() {
+		return stateCode;
+	}
+
+	public void setStateCode(String stateCode) {
+		this.stateCode = stateCode;
+	}
+	
+	
 }

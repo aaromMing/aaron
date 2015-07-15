@@ -9,7 +9,7 @@ public interface IUserService extends IService {
 
 	List selectAll();
 
-	boolean denglu(Userinfo u, String ip);
+	boolean denglu(Userinfo u);
 
 	boolean zhuce(Userinfo u);
 

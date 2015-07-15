@@ -1,8 +1,8 @@
 package com.neusoft.chatroom.api.entity;
 
-import java.io.Serializable;
+import com.neusoft.chatroom.api.service.StateCode;
 
-public class Userinfo implements Serializable{
+public class Userinfo  extends StateCode{
 	/**
 	 * 
 	 */

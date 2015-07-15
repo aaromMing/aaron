@@ -2,7 +2,13 @@ package com.neusoft.chatroom.api.entity;
 
 import java.sql.Timestamp;
 
-public class OnlineUser {
+import com.neusoft.chatroom.api.service.StateCode;
+
+public class OnlineUser extends StateCode {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -431146722236301619L;
 	private int id;
 	private int user_id;
 	private String ip;
