@@ -45,6 +45,7 @@ public class Login extends JFrame {
 	private Socket s = null;
 	private Socket so = null;
 	Userinfo u = new Userinfo();
+	int loginErrorTimes = 0;
 
 	private JLabel jlabel = null;
 
@@ -224,39 +225,49 @@ public class Login extends JFrame {
 			bl.setText("登录");
 			bl.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
-					// 做登录操作
-					// 提取用户名和密码
-					u.setName(tu.getText());
-					u.setPass(tp.getText());
-					String ip = GetIP.getIp();
-					u.setStateCode(StateCode.LOGIN);
 					try {
+
+						// 做登录操作
+						// 提取用户名和密码
+						u.setName(tu.getText());
+						u.setPass(tp.getText());
+						String ip = GetIP.getIp();
+						u.setStateCode(StateCode.LOGIN);
+						// 请求服务端登录
 						ObjSerializeAndDeserialize.SerializeObj(
 								s.getOutputStream(), u);
+						// 获取登录信息
 						u = ObjSerializeAndDeserialize.DeserializePerson(
 								s.getInputStream(), Userinfo.class);
-					} catch (IOException e1) {
-						e1.printStackTrace();
-					}
-					boolean blogin = StateCode.SUCCESS.equals(u.getStateCode());
-					// 进行验证
-					if (blogin) {
-						// 成功
-						// 关闭当前的登陆页面
-						close();
-						// 打开主页面
-						errormessage("登录成功",
-								u.getName() + "您好： 您的权限是:" + u.getPower(), 1);
-						if (u.getPower().equals("管理员")) {
-							HoutaimainFrame m = new HoutaimainFrame(s, u, so);
-						} else {
-							QiantaiFrame m = new QiantaiFrame(s, u, so);
-						}
+						boolean blogin = StateCode.SUCCESS.equals(u
+								.getStateCode());
+						loginErrorTimes++;
+						// 进行验证
+						if (blogin) {
+							loginErrorTimes = 0;
+							// 成功
+							// 关闭当前的登陆页面
+							close();
+							// 打开主页面
+							errormessage("登录成功",
+									u.getName() + "您好： 您的权限是:" + u.getPower(),
+									1);
+							if (u.getPower().equals("管理员")) {
+								HoutaimainFrame m = new HoutaimainFrame(s, u,
+										so);
+							} else {
+								QiantaiFrame m = new QiantaiFrame(s, u, so);
+							}
 
-					} else {
-						// 不成功
-						// 弹出消息框提示用户：用户名或密码错误
-						errormessage("登陆错误", "用户名或密码错误，请重新填写", 0);
+						} else if (loginErrorTimes > 3) {
+							errormessage("登陆错误", "用户名或密码错误，请输入验证码并重新填写", 0);
+						} else {
+							// 不成功
+							// 弹出消息框提示用户：用户名或密码错误
+							errormessage("登陆错误", "用户名或密码错误，请重新填写", 0);
+						}
+					} catch (IOException e2) {
+						e2.printStackTrace();
 					}
 				}
 			});
