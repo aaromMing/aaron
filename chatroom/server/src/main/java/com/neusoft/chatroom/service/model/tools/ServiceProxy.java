@@ -19,7 +19,7 @@ public class ServiceProxy {
 	public static <T extends IService> T getOwnerProxy(Class<T> service) {
 		try {
 			T newService = service.newInstance();
-			System.out.println(newService);
+//			System.out.println(newService);
 			return getOwnerProxy(newService);
 		} catch (InstantiationException e) {
 			e.printStackTrace();

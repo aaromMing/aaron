@@ -359,6 +359,7 @@ public class QiantaiFrame extends JFrame {
 	private JTextArea getJtshowmessage() {
 		if (jtshowmessage == null) {
 			jtshowmessage = new JTextArea();
+
 		}
 		return jtshowmessage;
 	}
@@ -473,6 +474,10 @@ public class QiantaiFrame extends JFrame {
 			jbsend.setText("   发  送");			
 			jbsend.addActionListener(new java.awt.event.ActionListener() {
 				public void actionPerformed(java.awt.event.ActionEvent e) {
+					int msgLen = jtshowmessage.getText().length();
+					jtshowmessage.setCaretPosition(msgLen);
+					jtshowmessage .requestFocus();
+					
 					if(jcfriend.getSelectedItem().toString().equals("全部用户")){
 						for(int i = 1; i<(jcfriend.getItemCount());i++){					
 							String ip = GetIP.getIp();
